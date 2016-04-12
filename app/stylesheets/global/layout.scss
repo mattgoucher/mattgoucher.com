@@ -1,5 +1,6 @@
 body {
     color: $white;
+    line-height: 1.65em;
     font-family: $family;
     background: $base;
 }
@@ -12,4 +13,9 @@ html, body { position: relative; padding: 0; margin: 0; width: 100%; height: 100
         transition: color 120ms ease;
 
         &:hover { color: $blue; text-decoration: underline; }
+    }
+
+    // Container
+    .container {
+      margin: 0 25px;
     }
