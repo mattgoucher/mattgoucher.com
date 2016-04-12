@@ -1,2 +1,2 @@
-#### Fuckbeards
-The node application running fuckbeards.com
+#### Matt Goucher
+The node application running mattgoucher.com

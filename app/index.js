@@ -21,7 +21,7 @@ app.use(logger('dev'));
 app.use(compression());
 app.use(parser.json());
 app.use(parser.urlencoded({extended: false}));
-app.use(express.static(path.join(__dirname, '/public')));
+app.use(express.static(path.join(__dirname, '../public')));
 
 // Initialize Router
 app.use(routes(express.Router()));

@@ -1,40 +1,47 @@
-@include keyframes(bump) {
-    0%   { left: 0; transform: rotate(0deg); }
-    50%  { left: -5px; transform: rotate(180deg); }
-    100% { left: 0; transform: rotate(0deg);}
-}
 .site-header {
-    margin: 0 0 40px 0;
-    padding: 25px;
-    background: $white;
+  margin: 0 0 40px 0;
+  padding: 25px;
+  color: $black;
+  text-align: center;
+  background: $white;
+  box-shadow: 0 1px 0 0 $silver;
 
-    // Logo
-    .logo {
-        display: block;
-        font-size: 16px;
-        line-height: 1;
-        color: $orange;
-        font-weight: $bold;
-        text-transform: lowercase;
+  // Logo
+  .logo {
+    display: block;
+    margin: 0 0 10px 0;
+    font-size: 22px;
+    line-height: 1;
+    font-weight: $semibold;
+    text-align: center;
+    text-transform: uppercase;
 
-        // Logo Linkage
-        a {
-            text-decoration: none;
-            transition: color 100ms ease;
-
-            // Hover states
-            &:hover {
-                color: $basedark;
-
-                &:before { animation: bump 400ms 1; }
-            }
-
-            // Hash
-            &:before {
-                position: relative;
-                display: inline-block;
-                content: '#';
-            }
-        }
+    a {
+      margin: 0 0 0 0.25em;
+      outline: none;
+      letter-spacing: 0.25em;
+      text-decoration: none;
     }
+  }
+
+  // Description
+  .description {
+    display: block;
+    padding: 0 0 25px 0;
+    line-height: 1;
+    font-size: 14px;
+    font-weight: $light;
+  }
+
+  // About
+  .about {
+
+    // Lifestyle Branding
+    .graphic {
+      display: block;
+      height: 400px;
+      background: url('https://instagram.fsjc1-3.fna.fbcdn.net/t51.2885-15/e35/12965276_1727988290778891_847345324_n.jpg') center center no-repeat;
+      background-size: cover;
+    }
+  }
 }
