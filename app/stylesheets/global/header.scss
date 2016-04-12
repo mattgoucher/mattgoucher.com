@@ -1,0 +1,40 @@
+@include keyframes(bump) {
+    0%   { left: 0; transform: rotate(0deg); }
+    50%  { left: -5px; transform: rotate(180deg); }
+    100% { left: 0; transform: rotate(0deg);}
+}
+.site-header {
+    margin: 0 0 40px 0;
+    padding: 25px;
+    background: $white;
+
+    // Logo
+    .logo {
+        display: block;
+        font-size: 16px;
+        line-height: 1;
+        color: $orange;
+        font-weight: $bold;
+        text-transform: lowercase;
+
+        // Logo Linkage
+        a {
+            text-decoration: none;
+            transition: color 100ms ease;
+
+            // Hover states
+            &:hover {
+                color: $basedark;
+
+                &:before { animation: bump 400ms 1; }
+            }
+
+            // Hash
+            &:before {
+                position: relative;
+                display: inline-block;
+                content: '#';
+            }
+        }
+    }
+}

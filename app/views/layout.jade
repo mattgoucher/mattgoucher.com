@@ -1,0 +1,17 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        title=(`Fuckbeards${title ? (' - ' + title) : ' - Wear Your Beard'}`)
+        link(rel="stylesheet" type="text/css" href="/stylesheets/app.css")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no")
+    body(class=(bodyclass))
+
+        //- Header
+        include layout/header
+
+        //- Contnet
+        block content
+
+        //- Footer
+        include layout/footer

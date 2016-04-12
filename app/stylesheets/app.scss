@@ -1,0 +1,14 @@
+// Fuckbeards Stylesheet
+
+    // Global
+    @import "global/reset";
+    @import "global/variables";
+    @import "global/mixins";
+    @import "global/layout";
+
+    // Layout
+    @import "global/header";
+
+    // Pages
+    @import "pages/home";
+    @import "pages/error";
