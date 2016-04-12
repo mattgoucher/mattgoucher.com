@@ -27,7 +27,6 @@
   // Description
   .description {
     display: block;
-    padding: 0 0 25px 0;
     line-height: 1;
     font-size: 14px;
     font-weight: $light;
@@ -39,8 +38,8 @@
     // Lifestyle Branding
     .graphic {
       display: block;
-      height: 400px;
-      background: url('https://instagram.fsjc1-3.fna.fbcdn.net/t51.2885-15/e35/12965276_1727988290778891_847345324_n.jpg') center center no-repeat;
+      padding: 0 0 35% 0;
+      background: url('/assets/lakewashington.jpg') center 30% no-repeat;
       background-size: cover;
     }
   }

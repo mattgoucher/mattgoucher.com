@@ -1,0 +1,25 @@
+.site-footer {
+  display: block;
+  padding: 40px 0;
+  text-align: center;
+
+  // Memo
+  .memo {
+    display: block;
+    line-height: 1;
+    font-size: 12px;
+    color: darken($gray, 40%);
+  }
+
+  // Socials
+  .socials {
+    text-align: center;
+
+    a { color: $gray; &:hover { color: $blue; }}
+
+    .social {
+      display: inline-block;
+      margin: 0 10px;
+    }
+  }
+}

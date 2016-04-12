@@ -10,6 +10,7 @@ import compression from 'compression';
 // Configuration
 import routes from './routes';
 import config from '../config';
+import bodyclass from './middleware/bodyclass';
 
 // Initialize expess
 const app = express();
@@ -22,6 +23,9 @@ app.use(compression());
 app.use(parser.json());
 app.use(parser.urlencoded({extended: false}));
 app.use(express.static(path.join(__dirname, '../public')));
+
+// Middlewares
+app.use(bodyclass);
 
 // Initialize Router
 app.use(routes(express.Router()));

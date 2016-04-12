@@ -7,5 +7,7 @@
  * @return {undefined}
  */
 exports.index = (req, res, next) => {
-    return res.render('home/index');
+    return res.render('home/index', {
+      home: true
+    });
 };
