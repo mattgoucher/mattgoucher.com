@@ -4,19 +4,20 @@
  * @param  {string} env The current node environment
  * @return {object}     The configuration file
  */
-module.exports = (function() {
-    var env = process.env.NODE_ENV || 'development',
-        config;
+module.exports = (function _config() {
+  let config;
+  let {port = 3000, env = 'development'} = process.env;
 
-    try {
-        config = require('./' + env);
-        config.env = env;
-        config.port = config.port || process.env.PORT || 3000;
-    } catch(e) {
-        console.log(`Unable to load '${env}' configuration.`);
-        return process.exit();
-    }
+  // Try loading the config..
+  try {
+    config = require(`./${env}`);
+    config.env = env;
+    config.port = config.port || port;
+  } catch (e) {
+    console.log(`Unable to load '${env}' configuration.`);
+    return process.exit(0);
+  }
 
-    console.log(`Configuration '${env}' loaded`);
-    return config;
-}());
+  console.log(`Configuration '${env}' loaded.`);
+  return config;
+})();

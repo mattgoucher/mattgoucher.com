@@ -4,7 +4,8 @@
   "description": "The application powering mattgoucher.com",
   "main": "index.js",
   "scripts": {
-    "Xprestart": "babel app --out-dir lib && webpack --config webpack.config.babel.js -p --optimze-dedupe",
+    "xprestart": "babel app --out-dir lib && webpack --config webpack.config.babel.js -p --optimze-dedupe",
+    "prestart": "echo 'prestart' disabled..",
     "start": "node index",
     "predev": "npm run prestart",
     "dev": "NODE_ENV=development nodemon ./index.js"

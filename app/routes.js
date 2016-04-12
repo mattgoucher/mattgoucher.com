@@ -1,11 +1,14 @@
-module.exports = function(app) {
+/**
+ * Application Router
+ */
+module.exports = function(router) {
 
     // Homepage
-    app.get('/', require('./controllers/home').index);
+    router.get('/', require('./controllers/home').index);
 
     // Errors
-    app.use(require('./controllers/error').fourHundred);
-    app.use(require('./controllers/error').fiveHundred);
+    router.use(require('./controllers/error').fourHundred);
+    router.use(require('./controllers/error').fiveHundred);
 
-    return app;
+    return router;
 };
