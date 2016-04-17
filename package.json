@@ -6,7 +6,6 @@
   "scripts": {
     "prestart": "gulp",
     "start": "NODE_ENV=production node index",
-
     "predev": "gulp",
     "dev": "NODE_ENV=development nodemon ./index.js"
   },
@@ -32,14 +31,6 @@
     "cookie-parser": "^1.4.1",
     "csurf": "^1.8.3",
     "express": "^4.13.4",
-    "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^3.1.0",
-    "gulp-concat": "^2.6.0",
-    "gulp-livereload": "^3.8.1",
-    "gulp-plumber": "^1.1.0",
-    "gulp-rename": "^1.2.2",
-    "gulp-sass": "^2.2.0",
-    "gulp-uglify": "^1.5.2",
     "helmet": "^1.1.0",
     "jade": "^1.11.0",
     "morgan": "^1.6.1"

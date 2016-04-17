@@ -1,22 +1,30 @@
 // Fuckbeards Variables
 
-    // Brand Colors
-    $blue:   #596984;
-    $gray:   #C2c2c2;
-    $black:  #000000;
-    $white:  #ffffff;
-    $orange: #d36a0e;
-    $silver: #f2f2f2;
+  // Brand Colors
+  $blue:   #2FC0CE;
+  $gray:   #eeeeee;
+  $dgray:  #85898E;
+  $black:  #000000;
+  $white:  #ffffff;
+  $orange: #d36a0e;
+  $silver: #f2f2f2;
 
-    // Grays
-    $base: #f7f7f7;
-    $basedark: darken($base, 82%);
+  // Grays
+  $base: #f7f7f7;
+  $basedark: darken($base, 82%);
 
-    // Typography
-    $light:    300;
-    $normal:   400;
-    $regular:  400;
-    $semibold: 600;
-    $bold:     700;
-    $bbold:    800;
-    $family:   'Open Sans';
+  // Typography
+  $light:    300;
+  $normal:   400;
+  $regular:  400;
+  $semibold: 700;
+  $bold:     700;
+  $bbold:    900;
+  $family:   'Lato', sans-serif;
+
+  // Grid Size
+  $grid: 32px;
+  $container: 1200px;
+
+  // Stylistic
+  $radius: 4px;
