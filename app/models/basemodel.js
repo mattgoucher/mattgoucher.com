@@ -7,7 +7,7 @@ export default class BaseModel {
      * Simple memory storage for rider
      * @type {Object}
      */
-    this.cache = {hi: 1};
+    this.cache = {};
   }
 
   /**

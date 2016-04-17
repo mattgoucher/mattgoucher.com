@@ -1,3 +1,3 @@
 (function() {
-    console.log('Fuckbeards');
+  // Silence is boring.
 }());
