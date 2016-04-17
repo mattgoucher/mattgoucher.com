@@ -4,8 +4,8 @@
   "description": "The application powering mattgoucher.com",
   "main": "index.js",
   "scripts": {
-    "prestart": "gulp",
-    "start": "NODE_ENV=production node index",
+    "postinstall": "gulp",
+    "start": "node index",
     "predev": "gulp",
     "dev": "NODE_ENV=development nodemon ./index.js",
     "test": "mocha test/**/*.spec.js --require test/setup.js"
