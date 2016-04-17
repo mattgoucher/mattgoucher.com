@@ -1,3 +1,4 @@
+import config from '../../config';
 import Strava from '../models/strava';
 
 /**
@@ -9,14 +10,14 @@ import Strava from '../models/strava';
  * @return {undefined}
  */
 exports.index = (req, res, next) => {
-  Strava
-    .get()
-    .then(
-      (athlete, a, b) => {
-        console.log(athlete, a, b);
-        return res.render('home/index', {
-          athlete: athlete
-        });
-      }
-    );
+  Strava.getAthlete(config.strava_athlete_id, (error, athlete) => {
+    let distance = athlete.bikes.reduce((distance, bike) => {
+      return distance + bike.distance;
+    }, 0);
+
+    return res.render('home/index', {
+      athlete,
+      distance
+    });
+  });
 };

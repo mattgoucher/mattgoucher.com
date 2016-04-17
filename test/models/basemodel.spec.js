@@ -1,43 +1,44 @@
 import {expect, should} from 'chai';
-import BaseModel from '../../app/models/basemodel';
+import BM from '../../app/models/basemodel';
 
 describe('BaseModel', () => {
+  const BaseModel = new BM();
 
-  describe('Set', () => {
+  describe('Cache Set', () => {
     it('Should set a cache item', () => {
-      BaseModel.set('foo', 'bar');
+      BaseModel.cacheSet('foo', 'bar');
       expect(
         BaseModel.cache.foo.payload
       ).to.equal('bar');
     });
   });
 
-  describe('Get', () => {
+  describe('Cache Get', () => {
     it('Should get a cache item', () => {
       BaseModel.cache.foo = {payload: 'bar'};
 
       expect(
-        BaseModel.get('foo')
+        BaseModel.cacheGet('foo')
       ).to.equal('bar');
     });
   });
 
-  describe('isValid', () => {
+  describe('Cache Is Valid', () => {
     it('Should return false for `undefined` cache items', () => {
       expect(
-        BaseModel.isValid('jones')
+        BaseModel.cacheIsValid('jones')
       ).to.equal(false);
     });
     it('Should return `true` for valid cache items', () => {
       BaseModel.cache.foo = {payload: 'bar', date: new Date(+new Date() + 10000)};
       expect(
-        BaseModel.isValid('foo')
+        BaseModel.cacheIsValid('foo')
       ).to.equal(true);
     });
     it('Should return `false` for invalid cache items', () => {
       BaseModel.cache.foo = {payload: 'bar', date: new Date(+new Date() - 10000)};
       expect(
-        BaseModel.isValid('foo')
+        BaseModel.cacheIsValid('foo')
       ).to.equal(false);
     });
   });
