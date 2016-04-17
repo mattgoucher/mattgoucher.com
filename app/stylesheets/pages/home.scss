@@ -3,19 +3,25 @@
  */
 .page-home {
   .bio {
+    float: left;
+    margin: 0 $grid $grid 0;
+    width: 60%;
     overflow: hidden;
   }
   figure {
     display: block;
-    margin: 0 0 $grid $grid;
+    margin: 0 0 $grid 0;
     padding: 0 0 25% 0;
-    float: right;
-    width: 40%;
-    background: url('/assets/lakewashington.jpg') center center no-repeat;
+    overflow: hidden;
+    background: center center no-repeat;
     background-size: cover;
   }
 
   @media screen and (max-width: 768px) {
-    figure { display: none; }
+    .bio { width: 100%; }
+    figure {
+      clear: both;
+      padding: 0 0 60% 0;
+    }
   }
 }
