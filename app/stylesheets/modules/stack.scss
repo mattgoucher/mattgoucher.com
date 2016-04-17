@@ -1,13 +1,18 @@
 pre.stack {
     position: relative;
-    margin: 0 auto;
+    margin: 0 auto $grid;
     padding: 15px;
-    width: 80%;
+    color: $white;
     word-break: break-word;
+    white-space:pre-line;
     border-radius: 2px;
     background: $blue;
     box-shadow: 0 0 0 1px rgba($white, 0.5);
 
+    // Last Stack Margins
+    &:last-of-type { margin-bottom: 0; }
+
+    // Append "Stack Trace" to header
     &:before {
         position: relative;
         top: -15px; left: -15px;

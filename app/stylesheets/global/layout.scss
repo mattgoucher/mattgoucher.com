@@ -1,7 +1,8 @@
 body {
-  color: $white;
+  color: $black;
   line-height: 1.65em;
   font-family: $family;
+  font-weight: $light;
   background: $white;//$base;
 }
 html, body { position: relative; padding: 0; margin: 0; width: 100%; height: 100%; }
@@ -24,6 +25,7 @@ html, body { position: relative; padding: 0; margin: 0; width: 100%; height: 100
     margin: 0 auto;
     padding: 0 ($grid / 2);
     max-width: $container;
+    color: $black;
     @include clearfix;
   }
 
