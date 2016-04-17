@@ -11,7 +11,8 @@
     "test": "mocha test/**/*.spec.js --require test/setup.js"
   },
   "engines": {
-    "node": "4.2.4"
+    "node": "4.2.4",
+    "npm": "2.14.12"
   },
   "repository": {
     "type": "git",
