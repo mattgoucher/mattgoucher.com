@@ -1,3 +1,5 @@
+import Strava from '../models/strava';
+
 /**
  * Homepage
  * @author Matt Goucher <matt@mattgoucher.com>
@@ -7,7 +9,8 @@
  * @return {undefined}
  */
 exports.index = (req, res, next) => {
-    return res.render('home/index', {
-      home: true
-    });
+  console.log(Strava);
+  return res.render('home/index', {
+    home: true
+  });
 };
