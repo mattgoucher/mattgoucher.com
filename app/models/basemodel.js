@@ -19,6 +19,7 @@ export default class BaseModel {
   requestWithPromise(opts) {
     return new Promise((resolve, reject) => {
       if (this.cacheIsValid(opts.url)) {
+        console.log(`Cache Hit: ${opts.url}`);
         return resolve(this.cacheGet(opts.url));
       }
 
