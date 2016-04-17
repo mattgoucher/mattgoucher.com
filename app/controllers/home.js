@@ -9,8 +9,14 @@ import Strava from '../models/strava';
  * @return {undefined}
  */
 exports.index = (req, res, next) => {
-  console.log(Strava);
-  return res.render('home/index', {
-    home: true
-  });
+  Strava
+    .get()
+    .then(
+      (athlete, a, b) => {
+        console.log(athlete, a, b);
+        return res.render('home/index', {
+          athlete: athlete
+        });
+      }
+    );
 };

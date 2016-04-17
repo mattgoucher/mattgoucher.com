@@ -1,0 +1,23 @@
+pre.stack {
+    position: relative;
+    margin: 0 auto;
+    padding: 15px;
+    width: 80%;
+    word-break: break-word;
+    border-radius: 2px;
+    background: $blue;
+    box-shadow: 0 0 0 1px rgba($white, 0.5);
+
+    &:before {
+        position: relative;
+        top: -15px; left: -15px;
+        display: block;
+        padding: 10px 15px;
+        width: 100%;
+        color: $white;
+        content: 'Stack Trace:';
+        text-transform: uppercase;
+        background: darken($blue, 5%);
+        border-radius: 2px 2px 0 0;
+    }
+}
