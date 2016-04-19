@@ -16,32 +16,30 @@ export default class BaseModel {
    * @param  {Object} opts Options to pass to request
    * @return {Object}      JSON parsed object
    */
-  requestWithPromise(opts) {
-    return new Promise((resolve, reject) => {
-      if (this.cacheIsValid(opts.url)) {
-        console.log(`Cache Hit: ${opts.url}`);
-        return resolve(this.cacheGet(opts.url));
+  requestWithPromise(opts, callback) {
+    if (this.cacheIsValid(opts.url)) {
+      console.log(`Cache Hit ${opts.url}`);
+      return callback(null, this.cacheGet(opts.url));
+    }
+
+    request.get(opts, (error, res, body) => {
+      let data;
+
+      if (error) {
+        return callback(error);
       }
 
-      request
-        .get(opts, (error, res, body) => {
-          let data;
+      try {
+        data = JSON.parse(body);
+      } catch(e) {
+        return callback(e);
+      }
 
-          if (error) {
-            return reject(error);
-          }
+      // Update cached entry
+      this.cacheSet(opts.url, data);
 
-          try {
-            data = JSON.parse(body);
-          } catch(e) {
-            return reject(e);
-          }
-
-          // Update cached entry
-          this.cacheSet(opts.url, data);
-
-          return resolve(data);
-        });
+      // Dispatch
+      return callback(error, data);
     });
   }
 

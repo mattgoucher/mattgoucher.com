@@ -20,24 +20,24 @@ class Strava extends BaseModel {
    * @return {undefined}
    */
   getAthlete(id, callback) {
-    this.requestWithPromise({
+    return this.requestWithPromise({
       url: `${this.baseurl}/athletes/${id}`,
       headers: this.headers
-    })
-      .then(
-        (athlete) => callback(null, athlete),
-        (error) => callback(error, {})
-      );
+    }, callback);
   }
 
   /**
-   * Convert meters to miles
+   * Get Strava athlete stats
    * @author Matt Goucher <matt@mattgoucher.com>
-   * @param  {Number} meters Number of meters to Convert
-   * @return {Number}        Converted distance
+   * @param  {string}   id       Strava athelete to get
+   * @param  {Function} callback Called with resulting (error, stats)
+   * @return {undefined}
    */
-  metersToMiles(meters) {
-    return meters * 0.00062137;
+  getStats(id, callback) {
+    return this.requestWithPromise({
+      url: `${this.baseurl}/athletes/${id}/stats`,
+      headers: this.headers
+    }, callback);
   }
 }
 

@@ -18,11 +18,9 @@
     padding-top: 0;
   }
 
-  .bio {
-    float: left;
-    margin: 0 $grid $grid 0;
-    width: 60%;
-    overflow: hidden;
+  // Stats
+  .strava-stats {
+    ul, h3 { position: relative; z-index: 1;}
   }
 
   @media screen and (max-width: 768px) {

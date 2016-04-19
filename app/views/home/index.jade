@@ -2,8 +2,8 @@ extends ../layout
 block content
   figure.hero
   .container
-    .bio.content.main
-      h2 Hello World.
+    .bio.content(class=(stats ? 'main' : ''))
+      h3 Hello World.
       p
         | I'm Matt Goucher. In March 2016, I left California and moved to Seattle, Washington to start the next path in my career. Presently, I'm a part of the awesome team at 
         a(href="https://concur.com") Concur
@@ -26,3 +26,22 @@ block content
         a(href="http://wonderfulunion.com") Wonderful Union. 
         | Alongside a team of amazing people, I built and maintained sites for a 
         | handful of major label musicians, and eventually went on to lead the front-end team.
+
+    if stats
+      .strava-stats.content.aside
+        h3 Recent Stats
+        ul.stats
+          if stats.all_ride_totals
+            li.stat
+              strong #{stats.all_ride_totals.count} Rides
+              small this month
+            li.stat
+              strong #{Helpers.metersToMiles(stats.all_ride_totals.distance)} Miles
+              small cycled this month
+            li.stat
+              strong #{Helpers.metersToFeet(stats.all_ride_totals.elevation_gain)} Feet
+              small climbed this month
+        .map
+
+  .container: pre.stack !{JSON.stringify(stats)}
+  .container: pre.stack !{JSON.stringify(athlete)}
