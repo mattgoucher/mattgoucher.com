@@ -35,7 +35,7 @@ app.use(helmet.hsts({maxAge: 7776000000}));
 app.locals.Helpers = Helpers;
 
 // Middlewares
-app.use(https);
+// app.use(https);
 app.use(bodyclass);
 
 // Initialize Router

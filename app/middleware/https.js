@@ -5,7 +5,7 @@ export default function https(req, res, next) {
     return next();
   }
 
-  if (req.protocol !== 'https') {
+  if (req.header('x-forwarded-proto') !== 'https') {
     return res.redirect(302, 'https://' + req.header('host') + req.url);
   }
 
