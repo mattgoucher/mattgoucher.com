@@ -26,10 +26,9 @@
   }
 
   @media screen and (max-width: 768px) {
-    .bio { width: 100%; }
-    figure {
-      clear: both;
-      padding: 0 0 60% 0;
+    .bio {
+      margin: 0;
+      width: auto;
     }
   }
 }
