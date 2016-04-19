@@ -2,19 +2,27 @@
  * Homepage Overrides
  */
 .page-home {
+
+  // Hero
+  .hero {
+    display: block;
+    margin: 0 0 $grid 0;
+    padding: 0 0 25%;
+    // background: url('https://scontent-sea1-1.cdninstagram.com/t51.2885-15/e35/12935124_455457971316195_757506177_n.jpg') center center no-repeat;
+    background: url('https://scontent-sea1-1.cdninstagram.com/t51.2885-15/e35/12965276_1727988290778891_847345324_n.jpg') center center no-repeat;
+    background-size: cover;
+  }
+
+  // Site Content
+  .site-content {
+    padding-top: 0;
+  }
+
   .bio {
     float: left;
     margin: 0 $grid $grid 0;
     width: 60%;
     overflow: hidden;
-  }
-  figure {
-    display: block;
-    margin: 0 0 $grid 0;
-    padding: 0 0 25% 0;
-    overflow: hidden;
-    background: center center no-repeat;
-    background-size: cover;
   }
 
   @media screen and (max-width: 768px) {

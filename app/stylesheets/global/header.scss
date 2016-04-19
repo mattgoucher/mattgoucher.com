@@ -10,10 +10,10 @@
   .logo {
     display: block;
     margin: 0 0 ($grid / 4) 0;
-    font-size: 24px;
+    font-size: 20px;
     line-height: 1;
     font-weight: $bold;
-    text-transform: uppercase;
+    // text-transform: uppercase;
 
     a {
       color: $black;
@@ -28,30 +28,31 @@
   .description {
     display: block;
     color: $dgray;
-    font-size: $grid / 2;
+    font-size: 14px;
     line-height: 1;
     font-weight: $light;
   }
 
   // Navigation
   .nav {
-    padding: ($grid / 4) 0;
+    padding: 5px 0;
     float: right;
 
     .nav-item {
       display: block;
+      float: left;
       padding: 0 ($grid / 4);
-      font-size: $grid / 2;
+      color: $dgray;
+      font-size: 14px;
+      font-weight: $light;
       line-height: $grid;
-      border-radius: $radius;
-      border: 2px solid $gray;
       text-decoration: none;
 
-      &:hover {
-        color: $white;
-        border-color: $blue;
-        background-color: $blue;
-      }
+      // Active State
+      &.active { color: $black; font-weight: $semibold; }
+
+      // Hover State
+      &:hover { color: $blue; }
     }
   }
 
