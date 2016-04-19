@@ -1,7 +1,7 @@
 import config from '../../config';
 import Strava from '../models/strava';
 import * as Helpers from '../helpers';
-console.log(Helpers);
+
 /**
  * Homepage
  * @author Matt Goucher <matt@mattgoucher.com>

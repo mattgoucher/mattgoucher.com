@@ -3,6 +3,7 @@
   padding: ($grid / 2) 0;
   text-align: left;
   background: $white;
+  border-top: 2px solid $blue;
   border-bottom: 1px solid $gray;
   @include clearfix;
 
