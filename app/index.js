@@ -18,6 +18,7 @@ import bodyclass from './middleware/bodyclass';
 const app = express();
 
 // App Configuration
+app.set('trust proxy', 1);
 app.set('view engine', 'jade');
 app.set('views', path.join(__dirname, '/views'));
 app.use(logger('dev'));
