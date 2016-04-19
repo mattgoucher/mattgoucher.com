@@ -1,3 +1,5 @@
+export const cache = +new Date();
+
 /**
  * Convert meters to miles
  * @author Matt Goucher <matt@mattgoucher.com>

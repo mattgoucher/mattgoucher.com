@@ -10,6 +10,7 @@ import compression from 'compression';
 // Configuration
 import routes from './routes';
 import config from '../config';
+import * as Helpers from './helpers';
 import bodyclass from './middleware/bodyclass';
 
 // Initialize expess
@@ -23,6 +24,9 @@ app.use(compression());
 app.use(parser.json());
 app.use(parser.urlencoded({extended: false}));
 app.use(express.static(path.join(__dirname, '../public')));
+
+// Utility
+app.locals.Helpers = Helpers;
 
 // Middlewares
 app.use(bodyclass);

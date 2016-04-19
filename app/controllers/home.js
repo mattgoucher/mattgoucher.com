@@ -1,6 +1,5 @@
 import config from '../../config';
 import Strava from '../models/strava';
-import * as Helpers from '../helpers';
 
 /**
  * Homepage
@@ -20,8 +19,7 @@ exports.index = (req, res, next) => {
 
       return res.render('home/index', {
         stats,
-        athlete,
-        Helpers
+        athlete
       });
     });
   });
