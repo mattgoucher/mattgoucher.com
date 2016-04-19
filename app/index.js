@@ -1,6 +1,6 @@
 import path from 'path';
 import csrf from 'csurf';
-import helemt from 'helmet';
+import helmet from 'helmet';
 import logger from 'morgan';
 import express from 'express';
 import parser from 'body-parser';
@@ -11,6 +11,7 @@ import compression from 'compression';
 import routes from './routes';
 import config from '../config';
 import * as Helpers from './helpers';
+import https from './middleware/https';
 import bodyclass from './middleware/bodyclass';
 
 // Initialize expess
@@ -25,10 +26,16 @@ app.use(parser.json());
 app.use(parser.urlencoded({extended: false}));
 app.use(express.static(path.join(__dirname, '../public')));
 
+// Secruity
+app.use(helmet());
+app.use(helmet.frameguard('deny'));
+app.use(helmet.hsts({maxAge: 7776000000}));
+
 // Utility
 app.locals.Helpers = Helpers;
 
 // Middlewares
+app.use(https);
 app.use(bodyclass);
 
 // Initialize Router
