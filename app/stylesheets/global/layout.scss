@@ -52,6 +52,11 @@ html, body { position: relative; padding: 0; margin: 0; width: 100%; height: 100
     border: 1px solid $gray;
     border-radius: $radius;
 
+    section {
+      margin: 0 0 $grid 0;
+
+      &:last-of-type { margin-bottom: 0; }
+    }
     h1 { font-size: $grid; }
     h2 { font-size: $grid * .70; }
     h3 { font-size: $grid * .60; }
