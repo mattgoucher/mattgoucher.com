@@ -30,6 +30,7 @@ app.use(express.static(path.join(__dirname, '../public')));
 app.use(helmet());
 app.use(helmet.frameguard('deny'));
 app.use(helmet.hsts({maxAge: 7776000000}));
+app.use(helmet.csp(config.csp));
 
 // Utility
 app.locals.Helpers = Helpers;

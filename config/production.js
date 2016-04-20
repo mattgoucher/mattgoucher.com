@@ -10,8 +10,21 @@ module.exports = {
    * Strava Configuration
    */
   strava_id: process.env.STRAVA_ID,
-  strava_athlete_id: process.env.STRAVA_ATHLETE_ID,
-  strava_athlete_bike: process.env.STRAVA_ATHLETE_BIKE,
   strava_secret: process.env.STRAVA_SECRET,
-  strava_access_token: process.env.STRAVA_ACCESS_TOKEN
+  strava_athlete_id: process.env.STRAVA_ATHLETE_ID,
+  strava_access_token: process.env.STRAVA_ACCESS_TOKEN,
+
+  /**
+   * Content Security Policy
+   * @type {Object}
+   */
+  csp: {
+    directives: {
+      defaultSrc: ["'self'"],
+      scriptSrc: ["'self'"],
+      styleSrc: ["'self'", 'https://fonts.googleapis.com'],
+      fontSrc: ['https://fonts.gstatic.com'],
+      imgSrc: ["'self'", 'https://*.cdninstagram.com']
+    }
+  }
 };
