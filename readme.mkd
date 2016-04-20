@@ -1,5 +1,5 @@
 #### Matt Goucher
-The node `4.2.4` application running [mattgoucher.com](https://mattgoucher.com)
+[![Circle CI](https://circleci.com/gh/mattgoucher/mattgoucher.com/tree/master.svg?style=svg)](https://circleci.com/gh/mattgoucher/mattgoucher.com/tree/master) The node `4.2.4` application running [mattgoucher.com](https://mattgoucher.com)
 
 ##### Quick Start
   Install dependencies
