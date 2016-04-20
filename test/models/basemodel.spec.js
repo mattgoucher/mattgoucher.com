@@ -30,13 +30,13 @@ describe('BaseModel', () => {
       ).to.equal(false);
     });
     it('Should return `true` for valid cache items', () => {
-      BaseModel.cache.foo = {payload: 'bar', date: new Date(+new Date() + 10000)};
+      BaseModel.cache.foo = {payload: 'bar', date: new Date(+new Date() + (1000 * 60 * 60))};
       expect(
         BaseModel.cacheIsValid('foo')
       ).to.equal(true);
     });
     it('Should return `false` for invalid cache items', () => {
-      BaseModel.cache.foo = {payload: 'bar', date: new Date(+new Date() - 10000)};
+      BaseModel.cache.foo = {payload: 'bar', date: new Date(+new Date() - (1000 * 60 * 60))};
       expect(
         BaseModel.cacheIsValid('foo')
       ).to.equal(false);

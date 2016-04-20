@@ -1,5 +1,7 @@
 import request from 'request';
 
+const hourInMs = (1000 * 60 * 60);
+
 export default class BaseModel {
   constructor() {
 
@@ -79,7 +81,7 @@ export default class BaseModel {
       return false;
     }
 
-    // Cache is less than 10 seconds old
-    return (new Date() - this.cache[key].date) < (1000 * 10);
+    // Cache is less than 1 hour old
+    return (new Date() - this.cache[key].date) < (hourInMs);
   }
 }
