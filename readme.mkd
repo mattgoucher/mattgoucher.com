@@ -1,2 +1,19 @@
 #### Matt Goucher
-The node application running mattgoucher.com
+The node `4.2.4` application running [mattgoucher.com](https://mattgoucher.com)
+
+##### Quick Start
+  Install dependencies
+```bash
+$ npm install
+```
+
+  Create development Configuration
+```bash
+$ cp config/production.js config/development.js
+# Make sure to replace the environment variables with your own configs
+```
+
+  Start it up
+```bash
+$ npm run dev
+```
