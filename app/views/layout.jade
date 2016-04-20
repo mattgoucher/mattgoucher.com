@@ -1,19 +1,20 @@
 doctype html
 html(lang="en")
-    head
-        meta(charset="UTF-8")
-        title=(`Matt Goucher${title ? (' - ' + title) : ' - Software Engineer in Seattle, Washington'}`)
-        link(href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet" type="text/css")
-        link(rel="stylesheet" type="text/css" href="/stylesheets/app.css?c=#{Helpers.cache}")
-        meta(name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no")
-    body(class=(bodyclass))
+  head
+    meta(charset="UTF-8")
+    title=(`Matt Goucher${title ? (' - ' + title) : ' - Software Engineer in Seattle, Washington'}`)
+    link(href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet" type="text/css")
+    link(rel="stylesheet" type="text/css" href="/stylesheets/app.css?c=#{Helpers.cache}")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no")
+    include layout/head
+  body(class=(bodyclass))
 
-        //- Header
-        include layout/header
+    //- Header
+    include layout/header
 
-        //- Contnet
-        .site-content
-          block content
+    //- Contnet
+    .site-content
+      block content
 
-        //- Footer
-        //- include layout/footer
+    //- Footer
+    //- include layout/footer
