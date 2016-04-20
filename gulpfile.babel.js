@@ -1,11 +1,12 @@
-var gulp         = require('gulp'),
-    sass         = require('gulp-sass'),
-    uglify       = require('gulp-uglify'),
-    concat       = require('gulp-concat'),
-    rename       = require('gulp-rename'),
-    plumber      = require('gulp-plumber'),
-    livereload   = require('gulp-livereload'),
-    autoprefixer = require('gulp-autoprefixer');
+import gulp from 'gulp';
+import sass from 'gulp-sass';
+import babel from 'gulp-babel';
+import uglify from 'gulp-uglify';
+import concat from 'gulp-concat';
+import rename from 'gulp-rename';
+import plumber from 'gulp-plumber';
+import livereload from 'gulp-livereload';
+import autoprefixer from 'gulp-autoprefixer';
 
 gulp
     .task('stylesheets', () => {
@@ -21,7 +22,10 @@ gulp
     .task('scripts', () => {
         return gulp.src(['app/scripts/app.js'])
             .pipe(plumber())
-            .pipe(concat('fuckbeards.min.js'))
+            .pipe(babel({
+              presets: ['es2015']
+            }))
+            .pipe(concat('mg.min.js'))
             .pipe(uglify())
             .pipe(gulp.dest('public/scripts'))
             .pipe(livereload());

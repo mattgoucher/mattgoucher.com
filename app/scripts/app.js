@@ -1,3 +1,3 @@
-(function() {
-  // Silence is boring.
-}());
+(() => {
+  // Silence is boring
+})();
