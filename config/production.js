@@ -1,3 +1,4 @@
+/* eslint-disable */
 module.exports = {
   port: process.env.PORT,
 
@@ -21,10 +22,10 @@ module.exports = {
   csp: {
     directives: {
       defaultSrc: ["'self'"],
-      scriptSrc: ["'self'"],
+      scriptSrc: ["'self'", 'https://*.google-analytics.com'],
       styleSrc: ["'self'", 'https://fonts.googleapis.com'],
       fontSrc: ['https://fonts.gstatic.com'],
-      imgSrc: ["'self'", 'https://*.cdninstagram.com']
+      imgSrc: ["'self'", 'https://*.cdninstagram.com', 'https://*.google-analytics.com']
     }
   }
 };
