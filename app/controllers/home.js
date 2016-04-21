@@ -9,19 +9,24 @@ import Strava from '../models/strava';
  * @param  {Function} next Express next callback
  * @return {undefined}
  */
-exports.index = (req, res, next) => {
+exports.index = (req, res) => {
+  let render = (params) => res.render('home/index', params);
 
-  // Get Athlete Information
-  Strava.getAthlete(config.strava_athlete_id, (error, athlete) => {
-
-    // Get Athlete Stats
-    Strava.getStats(config.strava_athlete_id, (error, stats) => {
-
-      return res.render('home/index', {
-        stats,
-        athlete
-      });
-    });
-  });
-
+  Promise
+    .all([
+      Strava.getAthlete(config.strava_athlete_id),
+      Strava.getStats(config.strava_athlete_id)
+    ])
+    .then(
+      (result) => {
+        let [athlete, stats] = result;
+        return render({
+          stats,
+          athlete
+        });
+      },
+      () => {
+        return render();
+      }
+    );
 };

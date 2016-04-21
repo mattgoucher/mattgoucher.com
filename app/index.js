@@ -1,17 +1,14 @@
 import path from 'path';
-import csrf from 'csurf';
 import helmet from 'helmet';
 import logger from 'morgan';
 import express from 'express';
 import parser from 'body-parser';
-import cookies from 'cookie-parser';
 import compression from 'compression';
 
 // Configuration
 import routes from './routes';
 import config from '../config';
 import * as Helpers from './helpers';
-import https from './middleware/https';
 import bodyclass from './middleware/bodyclass';
 
 // Initialize expess
@@ -43,6 +40,6 @@ app.use(bodyclass);
 app.use(routes(express.Router()));
 
 // Do it live.
-app.listen(config.port, error => {
+app.listen(config.port, () => {
   console.log(`${config.appname} running on port ${config.port}`);
 });

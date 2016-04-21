@@ -9,39 +9,31 @@ export default class BaseModel {
      * Simple memory storage for rider
      * @type {Object}
      */
-    this.cache = {};
+     this.cache = {};
   }
 
   /**
    * Request and receive a Promise
    * @author Matt Goucher <matt@mattgoucher.com>
-   * @param  {Object} opts Options to pass to request
-   * @return {Object}      JSON parsed object
+   * @param  {Object}   config Options to pass to request
+   * @return {function}        Promise of request
    */
-  requestWithPromise(opts, callback) {
-    if (this.cacheIsValid(opts.url)) {
-      console.log(`Cache Hit ${opts.url}`);
-      return callback(null, this.cacheGet(opts.url));
-    }
-
-    request.get(opts, (error, res, body) => {
-      let data;
-
-      if (error) {
-        return callback(error);
+  get(config) {
+    return new Promise((resolve, reject) => {
+      if (this.cacheIsValid(config.url)) {
+        return resolve(this.cacheGet(config.url));
       }
 
-      try {
-        data = JSON.parse(body);
-      } catch(e) {
-        return callback(e);
-      }
+      request(config, (error, response, body) => {
+        if (error) {
+          return reject(error);
+        }
 
-      // Update cached entry
-      this.cacheSet(opts.url, data);
+        // Persist to cachemoney
+        this.cacheSet(config.url, body);
 
-      // Dispatch
-      return callback(error, data);
+        return resolve(body);
+      });
     });
   }
 
@@ -49,7 +41,8 @@ export default class BaseModel {
    * Add a new cache item
    * @author Matt Goucher <matt@mattgoucher.com>
    * @param  {string} key   Cache identifier
-   * @param  {any}    value The value to cache
+   * @param  {*}      value The value to cache
+   * @return {*}            Cached value
    */
   cacheSet(key, value) {
     this.cache[key] = {

@@ -1,5 +1,8 @@
 /**
- * Application Router
+ * Route Configuration
+ * @author Matt Goucher <matt@mattgoucher.com>
+ * @param  {function} router Express router instance
+ * @return {function}        Routes
  */
 module.exports = function(router) {
 

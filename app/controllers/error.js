@@ -6,7 +6,7 @@
  * @param  {Function} next  Express next callback
  * @return {undefined}
  */
-exports.fourHundred = (req, res, next) => {
+exports.fourHundred = (req, res) => {
     return res.status(404).render('error/400', {
         title: 'Page Not Found'
     });
@@ -22,7 +22,7 @@ exports.fourHundred = (req, res, next) => {
  * @param  {Function} next  Express next callback
  * @return {undefined}
  */
-exports.fiveHundred = (error, req, res, next) => {
+exports.fiveHundred = (error, req, res) => {
     return res.status(500).render('error/500', {
         title: 'Babyfaced',
         stack: error.stack || error.toString()
