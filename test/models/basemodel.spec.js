@@ -1,4 +1,4 @@
-import {expect, should} from 'chai';
+import {expect} from 'chai';
 import BM from '../../app/models/basemodel';
 
 describe('BaseModel', () => {

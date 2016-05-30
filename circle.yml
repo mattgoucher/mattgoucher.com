@@ -5,3 +5,9 @@ machine:
 dependencies:
   pre:
     - npm install npm@2.14.12 -g
+
+deployment:
+  staging:
+    branch: master
+    heroku:
+      appname: mattgoucher

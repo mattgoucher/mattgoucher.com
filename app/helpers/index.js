@@ -7,7 +7,7 @@ export const cache = +new Date();
  * @return {Number}        Converted distance
  */
 export function metersToMiles(meters) {
-  return String((meters * 0.00062137).toFixed(2)).replace(/\.00/, '');
+  return upSomeCommas(meters * 0.00062137);
 }
 
 
@@ -18,5 +18,19 @@ export function metersToMiles(meters) {
  * @return {Number}        Converted distance
  */
 export function metersToFeet(meters) {
-  return Math.floor(meters * 3.28084);
+  return upSomeCommas(Math.floor(meters * 3.28084));
+}
+
+/**
+ * Add commas to seperate thousands
+ * @author Matt Goucher <matt@mattgoucher.com>
+ * @param  {Number} num Number to format
+ * @return {String}     Number with comma separators
+ */
+export function upSomeCommas(num) {
+    return num
+        .toFixed(2)
+        .toString()
+            .replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+            .replace(/\.00/, '');
 }
