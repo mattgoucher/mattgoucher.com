@@ -3,7 +3,6 @@
   padding: ($grid / 2) 0;
   text-align: left;
   background: $white;
-  border-top: 2px solid $blue;
   border-bottom: 1px solid $gray;
   @include clearfix;
 
@@ -36,17 +35,18 @@
 
   // Navigation
   .nav {
-    padding: 5px 0;
+    padding: 15px 0;
     float: right;
 
     .nav-item {
       display: block;
       float: left;
-      padding: 0 ($grid / 4);
+      margin: 0 ($grid / 4);
       color: $dgray;
-      font-size: 14px;
+      width: 12px;
+      height: 12px;
       font-weight: $light;
-      line-height: $grid;
+      line-height: 12px;
       text-decoration: none;
 
       // Active State
