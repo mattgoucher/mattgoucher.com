@@ -33,7 +33,6 @@ app.use(helmet.csp(config.csp));
 app.locals.Helpers = Helpers;
 
 // Middlewares
-// app.use(https);
 app.use(bodyclass);
 
 // Initialize Router
@@ -41,5 +40,5 @@ app.use(routes(express.Router()));
 
 // Do it live.
 app.listen(config.port, () => {
-  console.log(`${config.appname} running on port ${config.port}`);
+  process.stdout.write(`${config.appname} running on port ${config.port}`);
 });
