@@ -14,16 +14,16 @@ block content
 
     if stats
       .strava-stats.content.aside
-        h3 Recent Stats
+        h3 All Time Stats
         ul.stats
           if stats.all_ride_totals
             li.stat
               strong #{stats.all_ride_totals.count} Rides
-              small this month
+              small since March
             li.stat
               strong #{Helpers.metersToMiles(stats.all_ride_totals.distance)} Miles
-              small cycled this month
+              small cycled ever
             li.stat
               strong #{Helpers.metersToFeet(stats.all_ride_totals.elevation_gain)} Feet
-              small climbed this month
+              small climbed ever
         .map
