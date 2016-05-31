@@ -6,15 +6,10 @@
   // Hero
   .hero {
     display: block;
-    margin: 0 0 (-$grid) 0;
-    padding: 0 0 25%;
-    background: url('/assets/bike.jpg') center center no-repeat;
+    padding: 0 0 35%;
+    background: url('/assets/bike-2.jpg') center bottom no-repeat;
     background-size: cover;
-  }
-
-  // Site Content
-  .site-content {
-    padding-top: 0;
+    border-radius: $radius;
   }
 
   // Stats
