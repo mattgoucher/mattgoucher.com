@@ -7,7 +7,9 @@ dependencies:
     - npm install npm@2.14.12 -g
 
 deployment:
-  staging:
+  production:
     branch: master
+    commands:
+      - ./build/version.sh
     heroku:
       appname: mattgoucher
