@@ -11,5 +11,4 @@ deployment:
     branch: master
     commands:
       - ./build/version.sh
-    heroku:
-      appname: mattgoucher
+      - git push git@heroku.com:mattgoucher.git $CIRCLE_SHA1:master
