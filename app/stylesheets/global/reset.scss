@@ -423,4 +423,6 @@ th {
   padding: 0;
 }
 ul, p, figure, ol, li, h1, h2, h3, h4, h5, h6 { margin: 0; padding: 0; }
-svg path { fill: currentColor; }
+svg {
+  polygon, path { fill: currentColor; }
+}

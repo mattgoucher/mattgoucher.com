@@ -1,6 +1,7 @@
 extends ../layout
 block content
-  figure.hero
+  .container
+    figure.hero
   .container
     .bio.content(class=(stats ? 'main' : ''))
       section
@@ -11,7 +12,7 @@ block content
       section
         h3 Focus
         p I'm currently focused on all things Javascript. I leverage modern tools like #[a(href="http://expressjs.com/") Express], #[a(href="https://facebook.github.io/react/") React], #[a(href="https://github.com/reactjs/redux") Redux], #[a(href="https://webpack.github.io/") Webpack] and #[a(href="https://www.mongodb.org/") MongoDB]. This site uses a few of them, and you can view the code on #[a(href="https://github.com/mattgoucher") GitHub].
-
+  
     if stats
       .strava-stats.content.aside
         h3 All Time Stats
