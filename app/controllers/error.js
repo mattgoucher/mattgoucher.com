@@ -7,9 +7,11 @@
  * @return {undefined}
  */
 exports.fourHundred = (req, res) => {
-    return res.status(404).render('error/400', {
+    return res
+      .status(404)
+      .render('error/400', {
         title: 'Page Not Found'
-    });
+      });
 };
 
 
@@ -23,8 +25,10 @@ exports.fourHundred = (req, res) => {
  * @return {undefined}
  */
 exports.fiveHundred = (error, req, res) => {
-    return res.status(500).render('error/500', {
-        title: 'Babyfaced',
+    return res
+      .status(500)
+      .render('error/500', {
+        title: 'Application Error',
         stack: error.stack || error.toString()
-    });
+      });
 };
