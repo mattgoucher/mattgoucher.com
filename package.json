@@ -6,8 +6,8 @@
   "scripts": {
     "postinstall": "gulp",
     "start": "node index",
-    "predev": "gulp",
-    "dev": "NODE_ENV=development nodemon ./index.js",
+    "xpredev": "gulp",
+    "dev": "NODE_ENV=development gulp dev & nodemon ./index.js",
     "pretest": "eslint --ext .js --env browser,node app",
     "test": "mocha test/**/*.spec.js --require test/setup.js"
   },
@@ -61,5 +61,8 @@
     "request": "^2.71.0",
     "standard-version": "^2.2.1",
     "webpack": "^1.12.15"
+  },
+  "devDependencies": {
+    "sinon": "^1.17.7"
   }
 }

@@ -5,21 +5,28 @@
 
   // Hero
   .hero {
+    position: relative;
+    z-index: 1;
+    margin: -$grid 0 0 0;
     display: block;
-    padding: 0 0 35%;
-    background: url('/assets/bike-2.jpg') center bottom no-repeat;
+    padding: 0 0 30%;
+    background: url('https://images.unsplash.com/photo-1484447089447-a742155835e2?dpr=2&auto=format&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb&crop=') center -100px no-repeat;
     background-size: cover;
-    border-radius: $radius;
   }
 
-  // Stats
-  .strava-stats {
-    ul, h3 { position: relative; z-index: 1;}
+  .bio {
+    position: relative;
+    z-index: 2;
+    margin: -$grid 0 0 0;
   }
 
   @media screen and (max-width: 768px) {
+    .hero {
+      padding: 0 0 60%;
+      background-position: center top;
+    }
     .bio {
-      margin: 0 0 $grid;
+      // margin: 0 0 $grid;
       width: auto;
     }
   }
