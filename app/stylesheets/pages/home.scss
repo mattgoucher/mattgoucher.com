@@ -20,14 +20,13 @@
     margin: -$grid 0 0 0;
   }
 
-  // Stats
-  // .strava-stats {
-  //   ul, h3 { position: relative; z-index: 1;}
-  // }
-
   @media screen and (max-width: 768px) {
+    .hero {
+      padding: 0 0 60%;
+      background-position: center top;
+    }
     .bio {
-      margin: 0 0 $grid;
+      // margin: 0 0 $grid;
       width: auto;
     }
   }
